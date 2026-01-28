@@ -3,72 +3,69 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: #000; /* خلفية سوداء */
     overflow: hidden;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, sans-serif;
 }
 
-#heartCanvas {
+canvas {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
 }
 
-/* واجهة سؤال القطة */
+#starCanvas { z-index: 0; }
+#heartCanvas { z-index: 1; }
+
+/* واجهة السؤال */
 .overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     z-index: 100;
 }
 
 .cat-box {
     background: #111;
-    padding: 40px;
-    border-radius: 30px;
-    border: 2px solid #00f2ff;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #ff69b4;
     text-align: center;
     color: white;
-    box-shadow: 0 0 30px #00f2ff;
+    box-shadow: 0 0 20px #ff69b4;
 }
 
 input {
-    padding: 12px;
-    border-radius: 8px;
-    border: 2px solid #ff00ff;
-    background: #000;
-    color: white;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
     text-align: center;
     outline: none;
 }
 
-/* اسم فاطمة RGB */
+/* --- تعديل اسم فاطمة --- */
 #nameContainer {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 5rem;
-    font-weight: bold;
+    font-family: 'Great Vibes', cursive; /* الخط الجديد */
+    font-size: 7rem; /* حجم أكبر */
+    color: #ff69b4; /* لون وردي */
     z-index: 5;
     opacity: 0;
     pointer-events: none;
-    text-transform: uppercase;
-    /* انميشن الألوان */
-    background: linear-gradient(to right, #ff0000, #00ff00, #0000ff, #ff0000);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rgbText 3s linear infinite;
-    transition: opacity 2s ease-in;
-}
-
-@keyframes rgbText {
-    to { background-position: 200% center; }
+    /* توهج أبيض كثيف */
+    text-shadow: 
+        0 0 10px #fff, 
+        0 0 20px #fff, 
+        0 0 40px #fff, 
+        0 0 60px #ff69b4; 
+    transition: opacity 2s ease-in-out;
 }
 
 /* زر القلب */
@@ -82,7 +79,7 @@ input {
     border: none;
     cursor: pointer;
     z-index: 10;
-    filter: drop-shadow(0 0 10px red);
+    filter: drop-shadow(0 0 10px #ff69b4);
 }
 
 .hidden { display: none !important; }
@@ -90,9 +87,9 @@ input {
 /* الصناديق المتساقطة */
 .box {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #fff;
+    width: 25px;
+    height: 25px;
+    border: 1.5px solid #ff69b4;
     animation: fall 3s linear forwards;
 }
 
@@ -101,14 +98,14 @@ input {
     100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
-/* القلوب الصغيرة */
+/* القلوب المتفجرة */
 .mini-heart {
     position: absolute;
     font-size: 25px;
-    animation: explode 1.5s ease-out forwards;
+    animation: burst 1.5s ease-out forwards;
 }
 
-@keyframes explode {
+@keyframes burst {
     0% { transform: scale(0); opacity: 1; }
     100% { transform: translate(var(--tx), var(--ty)) scale(1.2); opacity: 0; }
 }
