@@ -3,35 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nano Heart - Fatima</title>
-    <!-- استدعاء خط احترافي -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Fatima's Heart - Woven Edition</title>
+    <!-- خط فاطمة والخطوط التفاعلية -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- خلفية النجوم -->
+    <!-- الطبقات الخلفية -->
     <canvas id="starCanvas"></canvas>
-    <!-- رسمة القلب النانو -->
     <canvas id="heartCanvas"></canvas>
 
-    <!-- واجهة سؤال القطة -->
-    <div id="catInterface" class="overlay">
-        <div class="cat-box">
-            <div class="cat-emoji">🐱</div>
-            <p>My cat asks: "Do you love me? (Type: yes)"</p>
-            <input type="text" id="answerInput" placeholder="Write yes here...">
+    <!-- واجهة السؤال -->
+    <div id="questionContainer" class="container">
+        <img src="https://g.top4top.io/p_3680x0s3w1.gif" class="gif-img" alt="Cat-Panda">
+        <h2 class="question">Do you love me?</h2>
+        <div class="button-container">
+            <button class="btn yes-btn" id="yesBtn">Yes</button>
+            <button class="btn no-btn" id="noBtn">No</button>
         </div>
     </div>
 
-    <!-- اسم فاطمة بالخط الجديد والوهج الأبيض -->
+    <!-- واجهة النتيجة المؤقتة -->
+    <div id="resultContainer" class="container hidden">
+        <img src="https://e.top4top.io/p_36801ubad1.gif" class="gif-img" alt="Love">
+        <h2 class="result-text">I knew it 😍!</h2>
+    </div>
+
+    <!-- اسم فاطمة (وردي بوهج أبيض) -->
     <div id="nameContainer">Fatima</div>
 
-    <!-- زر القلب -->
-    <button id="heartBtn" class="hidden">❤️</button>
-
-    <!-- حاوية التأثيرات -->
-    <div id="boxContainer"></div>
+    <!-- زر التبديل بين النانو والقلب المنسوج -->
+    <button id="heartToggleBtn" class="hidden">❤️</button>
 
     <script src="script.js"></script>
 </body>
