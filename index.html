@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nano Heart Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="heartCanvas"></canvas>
+
+    <!-- واجهة القطة -->
+    <div id="catInterface" class="overlay">
+        <div class="cat-box">
+            <div class="cat-emoji">🐱</div>
+            <p>My cat asks: "Do you love me? (Type: yes)"</p>
+            <input type="text" id="answerInput" placeholder="Write yes here...">
+        </div>
+    </div>
+
+    <!-- اسم فاطمة -->
+    <div id="nameContainer">FATIMA</div>
+
+    <!-- زر القلب -->
+    <button id="heartBtn" class="hidden">❤️</button>
+
+    <!-- حاوية التأثيرات -->
+    <div id="boxContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
